@@ -1,0 +1,161 @@
+<%- include('header.ejs') %>
+
+
+    <section class="cmspage mtb-40 home">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/slider3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slider2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slider1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <section class="featured-blog mtb-40">
+        <div class="container-fluid why">
+            <div class="container">
+                <h1>
+                    Welcome <%=r%> 
+                </h1>
+                <h1 class="title">Register Your<br> Course</h1>
+                <h4>Course Registration means the official recording of a student's name to study a course or courses.
+                </h4>
+                <br><br><br>
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/p5.jpeg">
+                            <div class="card-body">
+                                <h4>B.tech</h4>
+                                <p class="text-center">B.Tech is a professional undergraduate<br> engineering degree</p>
+                               <% if(bt){ %>
+                                    <a href="/admin/btechformview" class="btn btn-outline-danger">Display</a>
+                                <% } else { %>
+                                    <a href="/btech" class="btn btn-outline-danger">Register</a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/p6.jpeg">
+                            <div class="card-body">
+                                <h4>BCA</h4>
+                                <p class="text-center">BCA is a three-year Bachelor of <br>Business Administration</p>
+                                <% if(bc){ %>
+                                    <a href="/admin/bcaformview" class="btn btn-ouline-danger">Display</a>
+                                <% } else { %>
+                                    <a href="/bca" class="btn btn-outline-danger">Register</a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <div class="card">
+                            <img class="card-img-top" src="/images/p7.jpeg">
+                            <div class="card-body">
+                                <h4>MBA</h4>
+                                <p class="text-center">MBA is one of the most popular  <br>post-graduate courses in India
+                                    and abroad.</p>
+                                    <% if(mb){ %>
+                                        <a href="/admin/formview" class="btn btn-outline-danger">Display</a>
+                                    <% } else { %>
+                                        <a href="/form" class="btn btn-outline-danger">Register</a>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <br><br>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid why1 mt-4">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="/images/icon1.png"class="b"> 
+            <h3 class="text-center">JOIN TODAY</h3>
+            <br>
+            <p class="text-center">You Can Apply Online for Admission</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/images/icon2.png" class="b">
+           
+            <h3 class="text-center"> Apply Online for Degree</h3>
+            <br>
+            <p class="text-center">Click here to online apply for Degree</p>
+          </div>
+          <div class="col-md-4">
+            <img src="/images/icon1.png" class="b">
+            
+            <h3 class="text-center">Apply for Police ITI Courses</h3>
+            <br>
+            <p class="text-center">Click here to online apply for Degree</p>
+          </div> 
+         </div> 
+      </div> <!-- container fluid div end -->
+      <br><br>
+      <div class="container-fluid  shiva">
+        <div class="container">
+          <div class="row">
+              <h1 class="title text-center">OUR STARTUPS</h1>
+              <div class="col-md-3 c">
+                <img src="/images/startup1.jpg" class="mt-4" >
+                <h3 class="text-center mt-4">INSIGHTFUL TALKS</h3>
+                <h6 class="text-center">INSIGHTFUL TALKS</h6>
+                <p>Insightful talks began in 2018 as conference where Technology, entertainment and design converged. We cover almost every area of human thinking from science to business to global issues. Our platform is devoted to spreading ideas.</p>
+              </div>
+              <div class="col-md-3 c">
+                <img src="/images/startup2.jpg" class="mt-4"  >
+                 <h3 class="text-center mt-4">Spanshots</h3>
+                <h6 class="text-center">Spanshots </h6>
+                <p>Spanshots is the world’s first App/Web motion picture-sharing and social networking service that enables its users to take motion pictures and share them on Facebook with their friends.</p>
+              </div>
+              <div class="col-md-3 c">
+                <img src="/images/startup3.jpg" class="mt-4">
+                 <h3 class="text-center mt-4">GYANSHALA</h3>
+                <h6 class="text-center">GYANSHALA</h6>
+                <p>GyanShala is a firm specializing in Training, Workshop, Development, on-campus cultural program and CRT based programs. We offer pre-placement training for engineers, corporate training for executives, voice & accent training to teachers and other faculty development programs.</p>
+              </div>
+              <div class="col-md-3 c">
+                <img src="/images/startup4.jpg" class="mt-4">
+                 <h3 class="text-center mt-4">DOORSTEPSHOPPEE</h3>
+                <h6 class="text-center">DOORSTEPSHOPPEE</h6>
+                <p>Doorstepshoppee Services Private Limited is an online e-commerce company which aims to revolutionize the current trade and purchase scenario with its dynamic website/app. Now you can order anything without leaving the comfort of your home.</p>
+              </div>
+          </div>
+        </div>
+      </div> <!-- container fluid div end-->
+      <br><br><br><br>
+
+    <%- include('footer.ejs')%>

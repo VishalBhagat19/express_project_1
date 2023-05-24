@@ -1,0 +1,58 @@
+<%- include('../header.ejs') %>
+
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Serial.no</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>gender</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>College</th>
+            <th>Branch</th>
+            <th>ACtion</th>
+        </tr>
+        <% i=1 %>
+
+            <% f.forEach((b)=>{ %>
+                <tr>
+                    <td>
+                        <%= i++ %>
+                    </td>
+                    <td>
+                        <%= b.name %>
+                    </td>
+                    <td>
+                        <%= b.email %>
+                    </td>
+                    <td>
+                        <%= b.phone %>
+                    </td>
+                    <td>
+                        <%= b.gender %>
+                    </td>
+
+                    <td>
+                        <%= b.dob %>
+                    </td>
+                    <td>
+                        <%= b.address %>
+                    </td>
+                    <td>
+                        <%= b.college %>
+                    </td>
+                    <td>
+                        <%= b.branch %>
+                    </td>
+                    <td>
+                      
+                        <a href="/admin/formedit" class="btn btn-warning"><i
+                                class="fa-regular fa-pen-to-square"></i></a>
+                    </td>
+
+                    <% }) %>
+    </table>
+
+    <%- include('../footer.ejs') %>

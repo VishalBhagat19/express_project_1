@@ -1,0 +1,98 @@
+<%- include('header.ejs')%>
+<br><br><br><br>
+<section class="cmspage mtb-40">    
+<div class="container-fluid">
+        <div class="container">
+            <div class="row">
+
+                <h1 class="text-center">MBA Registration Form</h1>
+                <h3 class="text-center">Do Register Fast!! </h3>
+                <p class="text-center bg-info">In Case Any Query, Kindly Contact: 6266339138</p>
+               
+               
+               
+                
+                <div class="col-md-5">
+                  <img src="images/slider3.jpg" alt="slider" width="100%" height="100%">
+
+                </div>
+                <div class="col-md-7">
+                    <p class="h2 text-center">Form</p>
+                    <form action="/forminsert" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input class="form-control" type="text" name="name" required value="<%=r%>"
+                               />
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input class="form-control" type="email" name="email" required value="<%=n%>"
+                                 />
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Mobile Number:</label>
+                            <input class="form-control" type="number" name="phone" required
+                                placeholder="Enter Mobile Number" />
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender:</label><br />
+                            <label><input type="radio" name="gender" required value="Male" checked /> Male</label>
+                            <label><input type="radio" name="gender" required value="Female" /> Female</label>
+                            <label><input type="radio" name="gender" required value="Other" /> Other</label>
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>D.O.B:</label>
+                            <input class="form-control" type="date" name="date" required
+                                placeholder="Enter Birth Date" />
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <textarea class="form-control" type="address" name="address" required placeholder="Address" ></textarea>
+                            <span class="Error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Select College:</label>
+                            <select class="form-control" name="college">
+                                <option selected=""> Select College</option>
+                                <option>ITM</option>
+                                <option>MITS</option>
+                                <option>RJIT</option>
+                                <option>IPS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Course:</label>
+                            <select class="form-control" name="course">
+                            <option>MBA</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Branch:</label>
+                            <select class="form-control" name="branch">
+                                <option selected=""> Select Branch</option>
+                                <option>CSE</option>
+                                <option>IT</option>
+                                <option>EC</option>
+                                <option>ME</option>
+                                <option>CE</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-block" type="submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </section>
+        <%- include('footer.ejs')%>
