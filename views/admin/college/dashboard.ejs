@@ -1,61 +1,30 @@
 <%- include('../../header.ejs') %>
-  <h1>college dashboard page</h1>
-  <br><br>
-    <table class="table table-bordered table-striped">
-        <tr>
-            <th>Serial.no</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>gender</th>
-            <th>DOB</th>
-            <th>Address</th>
-            <th>College</th>
-            <th>Course</th>
-            <th>Branch</th>
-        
-        </tr>
-        <% i=1 %>
+<br><br><br>
 
-            <% f.forEach((b)=>{ %>
-                <tr>
-                    <td>
-                        <%= i++ %>
-                    <td>
-                        <%= b.name %>
-                    </td>
-                    <td>
-                        <%= b.email %>
-                    </td>
-                    <td>
-                        <%= b.phone %>
-                    </td>
-                    <td>
-                        <%= b.gender %>
-                    </td>
-
-                    <td>
-                        <%= b.dob %>
-                    </td>
-                    <td>
-                        <%= b.address %>
-                    </td>
-                    <td>
-                        <%= b.college %>
-                    </td>
-                    <td>
-                        <%= b.course %>
-                    </td>
-              
-                
-                    <td>
-                        <%= b.branch %>
-                    </td>
-                  
-                </tr>
-                    
-                <% }) %>
-    </table>
-    <br><br>
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/college/dashboard" class="active"style="font-weight:bold;">Dashboard</a></li>
+                            <li><a href="/college/display"style="font-weight:bold;">Display</a></li>
+                            <li><a href="/college/contact"style="font-weight:bold;">Contact</a></li>          
+                            <li><a href="/logout"style="font-weight:bold;">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <h1 style="font-size: 50px;color: black;">Welcome <b class="text-danger"><%=r %></b>
+                        <br>At This Admission Portal</h1>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br>
+<br><br><br>
 
 <%- include('../../footer.ejs') %>

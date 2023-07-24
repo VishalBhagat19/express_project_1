@@ -3,7 +3,7 @@
 <br><br>
 
     <table class="table table-bordered table-striped">
-        <tr>
+        <tr class="bg-secondary">
             <th>Serial.no</th>
             <th>Name</th>
             <th>Email</th>
@@ -14,12 +14,15 @@
             <th>College</th>
             <th>Course</th>
             <th>Branch</th>
+            <th>Status</th>
+            <th>Comment</th>
             <th>ACtion</th>
         </tr>
         <% i=1 %>
 
             <% f.forEach((b)=>{ %>
-                <tr>
+                <tr class="bg-warning">
+               
                     <td>
                         <%= i++ %>
                     <td>
@@ -51,10 +54,19 @@
                         <%= b.branch %>
                     </td>
                     <td>
+                        <%= b.status%>
+                    </td>
+                    <td>
+                        <%= b.comment%>
+                    </td>
+                    <td>
                       
                         <a href="/admin/formedit/<%=b._id%>" class="btn btn-warning"><i
                                 class="fa-regular fa-pen-to-square"></i></a>
-                    </td>
+                    
+                                <a href="/admin/formdelete/<%= b._id %>" class="btn btn-danger"><i
+                                    class="fa-solid fa-trash"></i></a>
+                            </td>
 
                 </tr>
                     

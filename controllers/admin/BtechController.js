@@ -63,6 +63,21 @@ class BtechController {
       console.log(err);
     }
   };
+
+  static formdelete = async (req, res) => {
+    try {
+      // for image deletion
+      const data = await BtechModel.findById(req.params.id);
+      // cons.log(blogdata);
+      
+      
+
+      const result = await BtechModel.findByIdAndDelete(req.params.id);
+      res.redirect("/admin/btechformview");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 }
 
 module.exports = BtechController;

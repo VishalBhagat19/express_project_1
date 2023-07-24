@@ -1,8 +1,9 @@
+const contactModel = require("../models/contact.js");
 const BtechModel = require("../models/btech");
 const LoginModel = require("../models/login");
 
 class CollegeController {
-  static displaydata = async (req, res) => {
+  static dashboarddata = async (req, res) => {
     try {
       const { name, image } = req.admin;
       const data = await BtechModel.find();
@@ -11,6 +12,16 @@ class CollegeController {
       console.log(err);
     }
   };
+  static displaydata = async (req, res) => {
+    try {
+      const { name, image } = req.admin;
+      const data = await BtechModel.find();
+      res.render("admin/college/display", { r: name, s: image, f: data });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
 
   static cpassword = async (req, res) => {
     try {
@@ -25,6 +36,16 @@ class CollegeController {
       console.log(err);
     }
   };
+
+//   static contact=async(req,res)=>{
+//     try{
+//         const{name,image}=req.admin
+//         const data= await contactModel.find()
+//         res.render('college/contact',{n:name,i:image,f:data})
+//     }catch(err){
+//         console.log(err)
+//         }
+//     }
 
   static updatepassword = async (req, res) => {
     try {
@@ -66,5 +87,21 @@ class CollegeController {
       console.log(err);
     }
   };
+
+
+  static update_approval=async(req,res)=>{
+    try{
+// console.log(req.body);
+      const result = await BtechModel.findByIdAndUpdate(req.params.id,{
+        comment:req.body.comment,
+        status:req.body.status
+      })
+    res.redirect('/college/dashboard')
+    }
+    catch(err){
+      console.log(err);
+    }
+
+  }
 }
 module.exports = CollegeController;

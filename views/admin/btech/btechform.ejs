@@ -1,8 +1,8 @@
 <%- include('../../header.ejs') %>
 
 
-    <table class="table table-bordered table-striped">
-        <tr>
+<table class="table table-bordered table-striped">
+    <tr class="bg-secondary">
             <th>Serial.no</th>
             <th>Name</th>
             <th>Email</th>
@@ -17,7 +17,7 @@
         <% i=1 %>
 
             <% f.forEach((b)=>{ %>
-                <tr>
+               <tr class="bg-warning">
                     <td>
                         <%= i++ %>
                     </td>

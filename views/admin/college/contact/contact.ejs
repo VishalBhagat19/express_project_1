@@ -1,0 +1,48 @@
+<%- include('../../../header.ejs')%>
+<br><br><br>
+<div class="container">
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="dash-left">
+                    <ul>
+                        <li class="active"><a href="/collage/dashboard" class="active"style="font-weight:bold;">Dashboard</a></li>
+                        <li><a href="/collage/display"style="font-weight:bold;">Display</a></li>
+                        <li><a href="/collage/contact"style="font-weight:bold;">Contact</a></li>          
+                        <li><a href="/logout"style="font-weight:bold;">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="dash-right">
+                    <div class="dash-header">
+                        <div class="dash-title">
+                            <h1 style="font-family: cursive;color:white">Contact details</h1>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped">
+                        <tr class="bg-secondary">
+                            <th>s.no</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                        </tr>
+                        <% i=1%>
+                        <% f.forEach((b)=>{%>
+                            <tr class="bg-warning">
+                                <td><%= i++ %></td>
+                                <td><%= b.name %></td>
+                                <td><%= b.email %></td>
+                                <td><%= b.phone%></td>
+                                <td><%= b.message %></td>
+                            </tr>
+                        <%})%>
+                       
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../../footer.ejs')%>

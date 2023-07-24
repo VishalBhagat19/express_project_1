@@ -1,0 +1,126 @@
+<%- include('/header.ejs')%>
+    <br><br>
+    <% if(message.length>0){%>
+<div class="alert alert-danger">
+    <%= message %>
+</div>
+   <% } %>
+   <% if(message1.length>0){%>
+    <div class="alert alert-success">
+        <%= message1 %>
+    </div>
+       <% } %>
+       <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 bg-warning p">
+                <img src="<%=i.url%>"><br>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cpassword">change password</button>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#uprofile">update password</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+       </div>
+    <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cpassword">change password</button>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uprofile">update password</button> -->
+
+    <!-- change password -->
+    <div class="modal fade" id="cpassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form method="post" action="/changepassword"enctype="multipart/form-data">
+                            <div class="form-group form-row">
+                                <label class="col-md-3 required">Old password*</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="oldpassword"  placeholder="old password" required
+                                        formControlName="password">
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3 required">New password *</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="newpassword"  placeholder="new password" required
+                                        formControlName="password">
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3 required">Confirm password *</label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" name="cpassword"  placeholder="confirm password" required
+                                        formControlName="password">
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-primary">change password</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>           
+        </div>
+
+
+    <!-- update profile -->
+    <div class="modal fade" id="uprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form method="post" action="/updateprofile"enctype="multipart/form-data">
+                    <div class="form-group form-row">
+                        <label class="col-md-3 required">Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="name" value="<%=n%>" placeholder="name" required
+                                formControlName="name">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group form-row">
+                        <label class="col-md-3 required">Email</label>
+                        <div class="col-md-9">
+                            <input type="email" class="form-control" name="email"  placeholder="email" required
+                                formControlName="email">
+                        </div>
+                    </div> -->
+                    <div class="form-group form-row">
+                        <label class="col-md-3 required">Profile</label>
+                        <div class="col-md-9">
+                            <input type="file" class="form-control" name="image"  placeholder="choosen an image" required
+                                ><img src="<%= i.url%>" alt="" width="50">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-9">
+                            <button type="submit" class="btn btn-primary">Update profile</button>
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+
+        </div>
+    </div>           
+</div>
+
+   <br><br>
+    <%- include('/footer.ejs')%>

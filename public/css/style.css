@@ -9,7 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 .nav1 {
-    background-color: #6E6E6E;
+    background: #000000c4;
+    height: 70px;
 }
 
 .img {
@@ -21,7 +22,7 @@
     line-height: 35px;
     letter-spacing: 1px;
     color:#F6E1C3;
-    font-family: cursive;
+    font-family: sans-serif;
     font-size: 20px;
 }
 
@@ -75,13 +76,15 @@
 }
 
 .why h1 {
-    font-family: cursive;
+    font-family:sans-serif;
     margin-top: 30px;
+    color: rgb(44, 44, 83);
 }
 
 .why h4 {
-    font-family: cursive;
+    font-family: sans-serif;
     margin-top: 10px;
+    color: rgb(44, 44, 83);
 }
 
 .card {
@@ -273,22 +276,22 @@
 }
 
 .footer{
-    background: #6E6E6E;
+    background: #000000c4;
     color:white;
     font-size: 20px;
     font-weight: 600;
-    font-family: cursive;
+    font-family: sans-serif;
     /* margin-top: 20px; */
 }
 .footer h5{
     font-size: 20px;
     font-weight: 600;
     color:white;
-    font-family: cursive;
+    font-family: sans-serif;
 }
 .footer td{
     color:white;
-    font-family: cursive;
+    font-family: sans-serif;
 }
 
 
@@ -341,5 +344,146 @@ background-color:#BAFF39 ;
 	grid-template-columns: repeat(3, 1fr);
 	align-items: center;
 	column-gap: 1.6 rem;
-	font-family: cursive;
+	font-family: sans-serif;
 }
+
+
+
+.service-item-top img {
+    transition: .5s;
+}
+
+.service-item-top:hover img {
+    transform: scale(1.1);
+}
+
+.service-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.service-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
+    border: 5px solid var(--light);
+    transition: .5s;
+}
+
+.service-carousel .owl-dot.active {
+    background: var(--light);
+    border-color: var(--primary);
+}
+
+/*** Team ***/
+.team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team-item .team-text {
+    height: 90px;
+    overflow: hidden;
+}
+
+.team-item .team-text .bg-light,
+.team-item .team-text .bg-primary {
+    position: relative;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s;
+}
+
+.team-item .team-text .bg-primary {
+    flex-direction: row;
+}
+
+.team-item:hover .team-text .bg-light {
+    margin-top: -90px;
+}
+
+.team-item .team-text .bg-primary .btn {
+    color: var(--primary);
+    background: #FFFFFF;
+}
+
+.team-item .team-text .bg-primary .btn:hover {
+    color: #FFFFFF;
+    background: var(--secondary)
+}
+
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    position: relative;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-item .testimonial-text::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: var(--light) transparent transparent transparent;
+    transition: .5s;
+
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text::after {
+    border-color: var(--primary) transparent transparent transparent;
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 350px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+.testimonial-carousel:hover .owl-nav {
+    width: 300px;
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+

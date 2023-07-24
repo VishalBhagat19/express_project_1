@@ -1,0 +1,94 @@
+<%- include('../../header.ejs') %>
+
+ 
+  <br><br>
+  <div class="container-fluid">
+ <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="dash-left">
+                <ul>
+                    <li class="active"><a href="/college/dashboard" class="active"style="font-weight:bold;">Dashboard</a></li>
+                    <li><a href="/college/display"style="font-weight:bold;">Display</a></li>
+                    <li><a href="/college/contact"style="font-weight:bold;">Contact</a></li>          
+                    <li><a href="/logout"style="font-weight:bold;">Logout</a></li>
+                </ul>
+            </div>   
+        </div>
+        <div class="col-md-9">
+            <div class="dash-right">
+                <h1 style="font-size: 50px;color: black;">Welcome <b class="text-danger"><%=r %></b>
+                <br>At This Admission Portal</h1>
+            </div> 
+        </div>
+<div class="col-md-8">
+    <div class="dash-right">-
+  <table class="table table-bordered table-striped">
+        <tr class="bg-secondary">
+            <th>Serial.no</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>College</th>
+            <th>Course</th>
+            <th>Branch</th>
+            <th>Status</th>
+            <th>Comment</th>
+            <th></th>
+
+        
+        </tr>
+        <% i=1 %>
+
+            <% f.forEach((b)=>{ %>
+                <tr class="bg-warning">
+                    <td>
+                        <%= i++ %>
+                    <td>
+                        <%= b.name %>
+                    </td>
+                    <td>
+                        <%= b.email %>
+                    </td>
+                    <td>
+                        <%= b.phone %>
+             </td>
+                    <td>
+                        <%= b.college %>
+                    </td>
+                    <td>
+                        <%= b.course %>
+                    </td>
+              
+                
+                    <td>
+                        <%= b.branch %>
+                    </td>
+                    <td>
+                        <%= b.status %>
+                    </td>
+                    <td>
+                        <form method="post" action="/update_approve/<%=b._id%>">
+                            <textarea name="comment"></textarea>
+                   
+                    </td>
+
+                    <td>
+                       
+                            <button class="btn btn-secondary bg-success text-black" value="approved" name="status">Approved</button>
+                            <a href="" class="btn btn-secondary bg-danger text-black" value="rejected" name="status">Rejected</a>
+                    </form>
+                   
+                    </td>
+                  
+                </tr>
+                    
+                <% }) %>
+    </table>
+    </div></div>
+</div>
+</div>
+</div>
+    <br><br>
+
+<%- include('../../footer.ejs') %>

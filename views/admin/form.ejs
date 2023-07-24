@@ -1,8 +1,8 @@
 <%- include('../header.ejs') %>
 
 
-    <table class="table table-bordered table-striped">
-        <tr>
+<table class="table table-bordered table-striped">
+    <tr class="bg-secondary">
             <th>Serial.no</th>
             <th>Name</th>
             <th>Email</th>
@@ -17,7 +17,8 @@
         <% i=1 %>
 
             <% f.forEach((b)=>{ %>
-                <tr>
+                <tr class="bg-warning">
+               
                     <td>
                         <%= i++ %>
                     </td>
@@ -49,7 +50,11 @@
                     <td>
                       
                         <a href="/admin/formedit" class="btn btn-warning"><i
-                                class="fa-regular fa-pen-to-square"></i></a>
+                            class="fa-regular fa-pen-to-square"></i></a>
+
+                            
+                            <a href="/admin/formdelete/<%= b._id %>" class="btn btn-danger"><i
+                                class="fa-solid fa-trash"></i></a>
                     </td>
 
                     <% }) %>

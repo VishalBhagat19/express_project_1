@@ -64,6 +64,22 @@ class BcaController {
       console.log(err);
     }
   };
+
+  static formdelete = async (req, res) => {
+    try {
+      // for image deletion
+      const data = await BtechModel.findById(req.params.id);
+      // cons.log(blogdata);
+      
+      
+
+      const result = await BtechModel.findByIdAndDelete(req.params.id);
+      res.redirect("/admin/bcaformview");
+    } catch (err) {
+      console.log(err);
+    }
+  
+}
 }
 
 module.exports = BcaController;

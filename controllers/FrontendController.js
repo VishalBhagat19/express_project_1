@@ -187,5 +187,83 @@ class FrontendController {
       console.log(err);
     }
   };
+
+  static changepassword = async (req, res) => {
+    try {
+      const { name, image, _id } = req.admin;
+      const { oldpassword, newpassword, cpassword } = req.body;
+      if (oldpassword && newpassword && cpassword) {
+        const user = await LoginModel.findById(_id);
+        const ismatch = await bcrypt.compare(oldpassword, user.password);
+        if (!ismatch) {
+          req.flash("error", "old password is not match!!");
+          res.redirect("/");
+        } else {
+          if (newpassword != cpassword) {
+            req.flash("error", "password and confirm password does not match");
+            res.redirect("/");
+          } else {
+            const newHashpassword = await bcrypt.hash(newpassword, 10);
+            await LoginModel.findByIdAndUpdate(_id, {
+              $set: { password: newHashpassword },
+            });
+            // alert("successfully change password!!");
+            req.flash("success","password changes successfully!!")
+            res.redirect("/home");
+          }
+        }
+      } else {
+        req.flash("error", "all fields are required");
+        res.redirect("/");
+      }
+      // console.log(req.body)
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  static updateprofile=async(req,res)=>{
+    try{
+        // console.log(req.params.id)
+        // console.log(req.body)
+        //image delete
+        const{name,image,email}=req.admin
+        if(req.files){
+        const profile=await LoginModel.findById(req.admin.id)
+        const imageid=profile.image.public_id
+        // console.log(imageiid)
+        await cloudinary.uploader.destroy(imageid)
+        //image update
+        const file=req.files.image
+        const myimage=await cloudinary.uploader.upload(file.tempFilePath,{
+        folder:'logo_image'                   
+        });
+        var imgdata={
+            name:req.body.name,
+            email:req.body.email,
+            image: {
+                public_id: myimage.public_id,
+                url: myimage.secure_url                     
+            },
+        }
+        }else{
+          var imgdata={
+            name:req.body.name,
+            email:req.body.email,
+            }
+        }
+        const result=await LoginModel.findByIdAndUpdate(req.admin.id,imgdata)
+        await result.save()
+         res.redirect('/home')
+    }catch(err){
+        console.log(err)
+    }
+    // try{
+    //     const{name,image}=req.admin
+    //     console.log(req.files.image)
+    // }catch(err){
+    //     console.log(err)
+      // }
+    }
 }
 module.exports = FrontendController;
